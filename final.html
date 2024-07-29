@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List Directory</title>
+    <style>
+        @font-face {
+            font-family: 'ListFont';
+            src: url('file:///');
+        }
+        body {
+            font-family: 'ListFont';
+        }
+    </style>
+</head>
+<body>
+    <h1>Attempting to List Directory Contents</h1>
+    <script>
+        fetch('file:///')
+            .then(response => response.text())
+            .then(text => {
+                document.body.innerHTML += '<pre>' + text + '</pre>';
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+    <svg width="0" height="0">
+        <image href="file:///"></image>
+    </svg>
+</body>
+</html>
